@@ -15,6 +15,7 @@ import Contact from './components/Contact.jsx'
 import Cart from './components/Cart.jsx'
 import FloatingCart from './components/FloatingCart.jsx'
 import BackToTop from './components/BackToTop.jsx'
+import BackToStartButton from './components/BackToStartButton.jsx'
 import ItemDetailModal from './components/ItemDetailModal.jsx'
 import Toasts from './components/Toasts.jsx'
 import FlyToCartLayer from './components/FlyToCartLayer.jsx'
@@ -169,7 +170,9 @@ export default function App() {
 
         <Contact restaurant={menu.restaurant} />
 
-        <footer className="pt-8 mt-8 border-t border-stone-200 dark:border-stone-800 text-center text-sm text-stone-500 dark:text-stone-400">
+        <BackToStartButton />
+
+        <footer className="pt-8 mt-4 border-t border-stone-200 dark:border-stone-800 text-center text-sm text-stone-500 dark:text-stone-400">
           <p className="font-semibold text-stone-700 dark:text-stone-200">{menu.restaurant.name}</p>
           <p className="mt-1">{menu.restaurant.address}</p>
           <p className="mt-1">{menu.restaurant.hours}</p>
