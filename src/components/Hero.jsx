@@ -48,7 +48,11 @@ export default function Hero({ restaurant }) {
         />
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/50 to-stone-950/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/75 to-stone-950/95" />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_45%,rgba(0,0,0,0.55),transparent_70%)]"
+      />
 
       <FloatingBlob className="bg-brand-500/30" style={{ top: '15%', left: '8%' }} duration={22} />
       <FloatingBlob className="bg-amber-400/20" style={{ top: '55%', right: '10%' }} duration={28} delay={2} />
@@ -70,7 +74,7 @@ export default function Hero({ restaurant }) {
 
         <h1
           aria-label={restaurant.name}
-          className="font-extrabold text-white tracking-tight text-5xl sm:text-7xl md:text-8xl leading-[1.05]"
+          className="font-extrabold text-white tracking-tight text-5xl sm:text-7xl md:text-8xl leading-[1.05] [text-shadow:0_4px_28px_rgba(0,0,0,0.65),0_0_50px_rgba(0,0,0,0.45)]"
         >
           {TITLE_CHARS.map((char, i) => (
             <motion.span
@@ -89,7 +93,7 @@ export default function Hero({ restaurant }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.05, duration: 0.6 }}
-          className="mt-5 text-base sm:text-xl text-stone-200 max-w-xl"
+          className="mt-5 text-base sm:text-xl text-stone-200 max-w-xl [text-shadow:0_2px_12px_rgba(0,0,0,0.6)]"
         >
           {restaurant.tagline}
         </motion.p>
@@ -98,7 +102,7 @@ export default function Hero({ restaurant }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-stone-300"
+          className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs sm:text-sm text-stone-300 [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]"
         >
           <span className="inline-flex items-center gap-1.5">
             <MapPin size={14} /> {restaurant.address}
