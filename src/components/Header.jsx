@@ -1,11 +1,19 @@
 import { Moon, ShoppingBag, Sun } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 import { useTheme } from '../context/ThemeContext.jsx'
 import { useCart } from '../context/CartContext.jsx'
+import { useUI } from '../context/UIContext.jsx'
 
 export default function Header({ restaurant, onOpenCart }) {
   const { theme, toggleTheme } = useTheme()
   const { totalItems } = useCart()
+  const { registerCartTarget } = useUI()
+  const cartBtnRef = useRef(null)
+
+  useEffect(() => {
+    registerCartTarget(cartBtnRef.current)
+  }, [registerCartTarget])
 
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-stone-950/80 border-b border-stone-200/60 dark:border-stone-800">
@@ -33,10 +41,13 @@ export default function Header({ restaurant, onOpenCart }) {
             )}
           </button>
 
-          <button
+          <motion.button
+            ref={cartBtnRef}
             type="button"
             onClick={onOpenCart}
             aria-label="Abrir carrinho"
+            animate={totalItems > 0 ? { scale: [1, 1.15, 1] } : {}}
+            transition={{ duration: 0.4 }}
             className="relative p-2 rounded-full bg-brand-500 hover:bg-brand-600 text-white transition-colors shadow-sm"
           >
             <ShoppingBag size={20} />
@@ -50,7 +61,7 @@ export default function Header({ restaurant, onOpenCart }) {
                 {totalItems}
               </motion.span>
             )}
-          </button>
+          </motion.button>
         </div>
       </div>
     </header>

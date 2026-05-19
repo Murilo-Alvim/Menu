@@ -5,7 +5,15 @@
     "phone": "5511999999999",
     "address": "Rua das Oliveiras, 245 — São Paulo / SP",
     "hours": "Ter a Dom · 18h às 23h",
-    "coverImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80"
+    "coverImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
+    "deliveryFee": 8.0,
+    "deliveryTime": "40-55 min"
+  },
+  "chef": {
+    "name": "Helena Marchetti",
+    "title": "Chef executiva",
+    "bio": "Formada pelo Le Cordon Bleu, Helena passou pela cozinha de restaurantes premiados em Lisboa e Buenos Aires antes de abrir a Sabor & Arte. Sua cozinha mistura técnica clássica com ingredientes de pequenos produtores brasileiros.",
+    "photo": "https://images.unsplash.com/photo-1581349485608-9469926a8e5e?auto=format&fit=crop&w=800&q=80"
   },
   "categories": [
     { "id": "entradas", "name": "Entradas", "icon": "🥗" },
@@ -20,78 +28,124 @@
       "categoryId": "entradas",
       "name": "Bruschetta de tomate",
       "description": "Pão italiano tostado, tomate confitado, manjericão fresco e azeite extra virgem.",
+      "longDescription": "Quatro fatias de pão italiano artesanal tostadas na chapa, finalizadas com tomatinhos confitados em azeite e tomilho, lascas de parmesão 24 meses e manjericão colhido na hora.",
       "price": 28.9,
       "image": "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=800&q=80",
-      "tags": ["vegetariano"]
+      "tags": ["vegetariano"],
+      "extras": [
+        { "id": "extra-parmesao", "name": "Parmesão extra", "price": 6.0 },
+        { "id": "extra-burrata", "name": "Burrata fresca", "price": 12.0 }
+      ]
     },
     {
       "id": "costela-bbq",
       "categoryId": "entradas",
       "name": "Costela BBQ na tábua",
       "description": "Costela suína desfiando ao molho barbecue da casa, tomatinhos confitados e batata rústica.",
+      "longDescription": "Costela suína cozida em baixa temperatura por 12 horas, finalizada com molho barbecue de bourbon e melaço. Servida em tábua com tomatinhos confitados, batata rústica e picles de cebola roxa.",
       "price": 42.0,
       "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
-      "tags": ["chef recomenda"]
+      "tags": ["chef recomenda"],
+      "featured": true,
+      "extras": [
+        { "id": "molho-bbq", "name": "Molho BBQ extra", "price": 4.0 },
+        { "id": "batata-extra", "name": "Porção extra de batata", "price": 14.0 }
+      ]
     },
     {
       "id": "anelones",
       "categoryId": "entradas",
       "name": "Anéis de cebola crocantes",
       "description": "Cebola roxa em tempurá, servida com maionese defumada da casa.",
+      "longDescription": "Cebola roxa em rodelas grossas, empanada em tempurá leve e frita até ficar dourada. Acompanha maionese defumada feita na casa com páprica e gotas de limão.",
       "price": 24.0,
       "image": "https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=800&q=80",
-      "tags": ["vegetariano"]
+      "tags": ["vegetariano"],
+      "extras": [
+        { "id": "extra-maionese", "name": "Maionese defumada extra", "price": 4.0 }
+      ]
     },
     {
       "id": "risoto-funghi",
       "categoryId": "principais",
       "name": "Risoto de funghi",
       "description": "Arroz arbóreo, mix de cogumelos frescos, vinho branco e parmesão 24 meses.",
+      "longDescription": "Risoto cremoso preparado com arroz arbóreo, mix de funghi porcini, paris e shimeji salteados na manteiga, finalizado com vinho branco seco e parmesão 24 meses ralado na hora.",
       "price": 58.0,
       "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80",
-      "tags": ["vegetariano", "sem glúten"]
+      "tags": ["vegetariano", "sem glúten"],
+      "sizes": [
+        { "id": "individual", "label": "Individual", "priceDelta": 0 },
+        { "id": "duplo", "label": "Para dois", "priceDelta": 28.0 }
+      ],
+      "extras": [
+        { "id": "trufa", "name": "Lascas de trufa negra", "price": 18.0 }
+      ]
     },
     {
       "id": "salmao-grelhado",
       "categoryId": "principais",
       "name": "Salmão grelhado",
       "description": "Filé de salmão ao molho de maracujá, acompanha purê de batata-doce e mini legumes.",
+      "longDescription": "Filé de salmão fresco grelhado no ponto, finalizado com molho cítrico de maracujá. Servido com purê aveludado de batata-doce e mini legumes salteados na manteiga de ervas.",
       "price": 72.0,
       "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80",
-      "tags": ["sem glúten"]
+      "tags": ["sem glúten"],
+      "featured": true,
+      "extras": [
+        { "id": "molho-extra", "name": "Molho de maracujá extra", "price": 5.0 }
+      ]
     },
     {
       "id": "filetto-rossini",
       "categoryId": "principais",
       "name": "Filé Rossini",
       "description": "Mignon ao molho madeira, foie gras, batata rústica e farofa de panko.",
+      "longDescription": "Filé mignon nobre selado ao ponto, coroado com foie gras dourado e regado com molho madeira reduzido por horas. Acompanha batata rústica assada com alecrim e crocante de panko.",
       "price": 89.0,
       "image": "https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80",
-      "tags": ["chef recomenda"]
+      "tags": ["chef recomenda"],
+      "sizes": [
+        { "id": "200g", "label": "200g", "priceDelta": 0 },
+        { "id": "300g", "label": "300g", "priceDelta": 28.0 }
+      ]
     },
     {
       "id": "burger-classic",
       "categoryId": "burgers",
       "name": "Classic Smash",
       "description": "180g de fraldinha, queijo cheddar inglês, picles, cebola caramelizada e molho da casa.",
+      "longDescription": "Blend exclusivo de fraldinha (180g) prensado na chapa, cheddar inglês derretido, picles agridoce, cebola caramelizada no vinho do Porto e molho secreto da casa em pão brioche artesanal.",
       "price": 38.0,
       "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
-      "tags": []
+      "tags": [],
+      "extras": [
+        { "id": "extra-bacon", "name": "Bacon crocante", "price": 6.0 },
+        { "id": "extra-queijo", "name": "Cheddar extra", "price": 4.0 },
+        { "id": "extra-fritas", "name": "Porção de fritas", "price": 18.0 }
+      ]
     },
     {
       "id": "burger-truffle",
       "categoryId": "burgers",
       "name": "Truffle Burger",
       "description": "Blend 180g, gruyère, rúcula, maionese trufada e pão brioche.",
+      "longDescription": "Blend 180g grelhado no ponto, gruyère suíço, rúcula selvagem, maionese de trufas negras e pão brioche artesanal levemente tostado.",
       "price": 46.0,
       "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=80",
-      "tags": ["chef recomenda"]
+      "tags": ["chef recomenda"],
+      "featured": true,
+      "extras": [
+        { "id": "extra-bacon2", "name": "Bacon crocante", "price": 6.0 },
+        { "id": "extra-fritas2", "name": "Porção de fritas trufadas", "price": 22.0 }
+      ]
     },
     {
       "id": "burger-veggie",
       "categoryId": "burgers",
       "name": "Veggie Beet",
       "description": "Hambúrguer de beterraba e grão-de-bico, queijo vegano, alface americana e maionese de ervas.",
+      "longDescription": "Hambúrguer artesanal de beterraba assada, grão-de-bico e quinoa, queijo vegano cremoso, alface americana crocante, maionese de ervas finas e pão de fermentação natural.",
       "price": 34.0,
       "image": "https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&w=800&q=80",
       "tags": ["vegano"]
@@ -101,15 +155,20 @@
       "categoryId": "sobremesas",
       "name": "Petit gâteau",
       "description": "Bolinho quente de chocolate belga com sorvete de creme.",
+      "longDescription": "Bolinho quente de chocolate belga 70% cacau com casca crocante e recheio líquido. Servido com bola generosa de sorvete de creme artesanal e calda de caramelo salgado.",
       "price": 26.0,
       "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
-      "tags": []
+      "tags": [],
+      "extras": [
+        { "id": "sorvete-extra", "name": "Bola extra de sorvete", "price": 8.0 }
+      ]
     },
     {
       "id": "cheesecake",
       "categoryId": "sobremesas",
       "name": "Cheesecake de frutas vermelhas",
       "description": "Base crocante de biscoito, recheio cremoso e calda artesanal de frutas vermelhas.",
+      "longDescription": "Cheesecake nova-iorquino com base de biscoito amanteigado, recheio cremoso de cream cheese e baunilha de Madagascar, finalizado com calda artesanal de frutas vermelhas.",
       "price": 24.0,
       "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80",
       "tags": []
@@ -119,15 +178,21 @@
       "categoryId": "bebidas",
       "name": "Limonada siciliana",
       "description": "Limão siciliano espremido na hora com xarope artesanal e hortelã.",
+      "longDescription": "Limão siciliano espremido na hora, xarope artesanal levemente doce, folhas de hortelã maceradas e água com gás. Servido em copo gelado.",
       "price": 14.0,
       "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80",
-      "tags": ["sem glúten"]
+      "tags": ["sem glúten"],
+      "sizes": [
+        { "id": "300", "label": "300 ml", "priceDelta": 0 },
+        { "id": "500", "label": "500 ml", "priceDelta": 4.0 }
+      ]
     },
     {
       "id": "suco-laranja",
       "categoryId": "bebidas",
       "name": "Suco de laranja natural",
       "description": "Laranja pera espremida na hora, 300 ml.",
+      "longDescription": "Laranja pera selecionada, espremida na hora e servida sem açúcar ou conservantes. Copo de 300 ml.",
       "price": 12.0,
       "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80",
       "tags": ["sem glúten", "vegano"]
@@ -137,9 +202,62 @@
       "categoryId": "bebidas",
       "name": "Água tônica premium",
       "description": "Água tônica artesanal com limão siciliano e gengibre.",
+      "longDescription": "Água tônica artesanal levemente amarga, com raspas de limão siciliano e lascas de gengibre fresco. Servida em copo alto com gelo.",
       "price": 11.0,
       "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=800&q=80",
       "tags": []
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Carolina Mendes",
+      "rating": 5,
+      "comment": "O Truffle Burger é viciante e o atendimento pelo WhatsApp foi super rápido. Virei cliente fiel!",
+      "avatar": "https://i.pravatar.cc/120?img=47"
+    },
+    {
+      "id": "t2",
+      "name": "Rafael Lima",
+      "rating": 5,
+      "comment": "Costela na tábua é o melhor que já comi em São Paulo. Vale cada centavo, comida chega quentinha.",
+      "avatar": "https://i.pravatar.cc/120?img=12"
+    },
+    {
+      "id": "t3",
+      "name": "Juliana Castro",
+      "rating": 4,
+      "comment": "Risoto de funghi delicioso e bem servido. A entrega demorou um pouquinho mas valeu a espera.",
+      "avatar": "https://i.pravatar.cc/120?img=45"
+    },
+    {
+      "id": "t4",
+      "name": "Marcos Pereira",
+      "rating": 5,
+      "comment": "Cardápio digital prático, pedi em 2 minutos. O petit gâteau é simplesmente perfeito.",
+      "avatar": "https://i.pravatar.cc/120?img=33"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Qual o horário de atendimento?",
+      "answer": "Atendemos de terça a domingo, das 18h às 23h. Às segundas-feiras o restaurante está fechado para manutenção."
+    },
+    {
+      "question": "Vocês fazem entrega? Qual a área?",
+      "answer": "Sim! Fazemos entrega num raio de 6 km a partir do restaurante, com taxa fixa de R$ 8,00. O tempo médio é de 40 a 55 minutos."
+    },
+    {
+      "question": "Quais formas de pagamento são aceitas?",
+      "answer": "Aceitamos dinheiro (com possibilidade de troco), PIX no momento do pedido e cartões de crédito e débito na maquininha do entregador."
+    },
+    {
+      "question": "Posso reservar uma mesa?",
+      "answer": "Claro! Reservas são confirmadas via WhatsApp. Recomendamos reservar com pelo menos 24h de antecedência, principalmente para fins de semana."
+    },
+    {
+      "question": "Vocês têm opções vegetarianas e veganas?",
+      "answer": "Sim. Vários itens do cardápio são marcados com as tags 'vegetariano' ou 'vegano'. Também adaptamos a maioria dos pratos sob consulta."
     }
   ]
 }

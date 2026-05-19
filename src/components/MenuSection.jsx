@@ -1,6 +1,6 @@
 import MenuItem from './MenuItem.jsx'
 
-export default function MenuSection({ category, items, sectionRef }) {
+export default function MenuSection({ category, items, sectionRef, onOpenDetail }) {
   return (
     <section
       ref={sectionRef}
@@ -15,7 +15,7 @@ export default function MenuSection({ category, items, sectionRef }) {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {items.map(item => (
-          <MenuItem key={item.id} item={item} />
+          <MenuItem key={item.id} item={item} onOpenDetail={onOpenDetail} />
         ))}
       </div>
     </section>

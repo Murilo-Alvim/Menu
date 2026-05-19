@@ -1,25 +1,45 @@
-import { MapPin, Clock, UtensilsCrossed, Sparkles, MessageCircle } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { MapPin, Clock, UtensilsCrossed, Sparkles, MessageCircle, Star } from 'lucide-react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 
 const shortcuts = [
   { href: '#cardapio', label: 'Cardápio', icon: UtensilsCrossed },
-  { href: '#servicos', label: 'Serviços', icon: Sparkles },
+  { href: '#destaques', label: 'Destaques', icon: Star },
+  { href: '#sobre', label: 'Sobre', icon: Sparkles },
   { href: '#contato', label: 'Contato', icon: MessageCircle }
 ]
 
 export default function Hero({ restaurant }) {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start']
+  })
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '-15%'])
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+
   return (
-    <section className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
-      <motion.img
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
-        src={restaurant.coverImage}
-        alt={restaurant.name}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+    <section
+      ref={ref}
+      className="relative h-64 sm:h-80 md:h-96 overflow-hidden"
+    >
+      <motion.div style={{ y: imageY }} className="absolute inset-0 will-change-transform">
+        <motion.img
+          initial={{ scale: 1.15, opacity: 0 }}
+          animate={{ scale: 1.05, opacity: 1 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+          src={restaurant.coverImage}
+          alt={restaurant.name}
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/40 to-transparent" />
-      <div className="relative h-full max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-6">
+
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative h-full max-w-5xl mx-auto px-4 sm:px-6 flex flex-col justify-end pb-6"
+      >
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -53,7 +73,7 @@ export default function Hero({ restaurant }) {
             ))}
           </nav>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   )
 }
