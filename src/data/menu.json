@@ -1,0 +1,145 @@
+{
+  "restaurant": {
+    "name": "Sabor & Arte",
+    "tagline": "Cozinha autoral, ingredientes de verdade",
+    "phone": "5511999999999",
+    "address": "Rua das Oliveiras, 245 — São Paulo / SP",
+    "hours": "Ter a Dom · 18h às 23h",
+    "coverImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80"
+  },
+  "categories": [
+    { "id": "entradas", "name": "Entradas", "icon": "🥗" },
+    { "id": "principais", "name": "Pratos Principais", "icon": "🍝" },
+    { "id": "burgers", "name": "Burgers", "icon": "🍔" },
+    { "id": "sobremesas", "name": "Sobremesas", "icon": "🍰" },
+    { "id": "bebidas", "name": "Bebidas", "icon": "🥤" }
+  ],
+  "items": [
+    {
+      "id": "bruschetta",
+      "categoryId": "entradas",
+      "name": "Bruschetta de tomate",
+      "description": "Pão italiano tostado, tomate confitado, manjericão fresco e azeite extra virgem.",
+      "price": 28.9,
+      "image": "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=800&q=80",
+      "tags": ["vegetariano"]
+    },
+    {
+      "id": "costela-bbq",
+      "categoryId": "entradas",
+      "name": "Costela BBQ na tábua",
+      "description": "Costela suína desfiando ao molho barbecue da casa, tomatinhos confitados e batata rústica.",
+      "price": 42.0,
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      "tags": ["chef recomenda"]
+    },
+    {
+      "id": "anelones",
+      "categoryId": "entradas",
+      "name": "Anéis de cebola crocantes",
+      "description": "Cebola roxa em tempurá, servida com maionese defumada da casa.",
+      "price": 24.0,
+      "image": "https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=800&q=80",
+      "tags": ["vegetariano"]
+    },
+    {
+      "id": "risoto-funghi",
+      "categoryId": "principais",
+      "name": "Risoto de funghi",
+      "description": "Arroz arbóreo, mix de cogumelos frescos, vinho branco e parmesão 24 meses.",
+      "price": 58.0,
+      "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80",
+      "tags": ["vegetariano", "sem glúten"]
+    },
+    {
+      "id": "salmao-grelhado",
+      "categoryId": "principais",
+      "name": "Salmão grelhado",
+      "description": "Filé de salmão ao molho de maracujá, acompanha purê de batata-doce e mini legumes.",
+      "price": 72.0,
+      "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80",
+      "tags": ["sem glúten"]
+    },
+    {
+      "id": "filetto-rossini",
+      "categoryId": "principais",
+      "name": "Filé Rossini",
+      "description": "Mignon ao molho madeira, foie gras, batata rústica e farofa de panko.",
+      "price": 89.0,
+      "image": "https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80",
+      "tags": ["chef recomenda"]
+    },
+    {
+      "id": "burger-classic",
+      "categoryId": "burgers",
+      "name": "Classic Smash",
+      "description": "180g de fraldinha, queijo cheddar inglês, picles, cebola caramelizada e molho da casa.",
+      "price": 38.0,
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+      "tags": []
+    },
+    {
+      "id": "burger-truffle",
+      "categoryId": "burgers",
+      "name": "Truffle Burger",
+      "description": "Blend 180g, gruyère, rúcula, maionese trufada e pão brioche.",
+      "price": 46.0,
+      "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=80",
+      "tags": ["chef recomenda"]
+    },
+    {
+      "id": "burger-veggie",
+      "categoryId": "burgers",
+      "name": "Veggie Beet",
+      "description": "Hambúrguer de beterraba e grão-de-bico, queijo vegano, alface americana e maionese de ervas.",
+      "price": 34.0,
+      "image": "https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&w=800&q=80",
+      "tags": ["vegano"]
+    },
+    {
+      "id": "petit-gateau",
+      "categoryId": "sobremesas",
+      "name": "Petit gâteau",
+      "description": "Bolinho quente de chocolate belga com sorvete de creme.",
+      "price": 26.0,
+      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+      "tags": []
+    },
+    {
+      "id": "cheesecake",
+      "categoryId": "sobremesas",
+      "name": "Cheesecake de frutas vermelhas",
+      "description": "Base crocante de biscoito, recheio cremoso e calda artesanal de frutas vermelhas.",
+      "price": 24.0,
+      "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80",
+      "tags": []
+    },
+    {
+      "id": "limao-siciliano",
+      "categoryId": "bebidas",
+      "name": "Limonada siciliana",
+      "description": "Limão siciliano espremido na hora com xarope artesanal e hortelã.",
+      "price": 14.0,
+      "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80",
+      "tags": ["sem glúten"]
+    },
+    {
+      "id": "suco-laranja",
+      "categoryId": "bebidas",
+      "name": "Suco de laranja natural",
+      "description": "Laranja pera espremida na hora, 300 ml.",
+      "price": 12.0,
+      "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80",
+      "tags": ["sem glúten", "vegano"]
+    },
+    {
+      "id": "agua-tonica",
+      "categoryId": "bebidas",
+      "name": "Água tônica premium",
+      "description": "Água tônica artesanal com limão siciliano e gengibre.",
+      "price": 11.0,
+      "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=800&q=80",
+      "tags": []
+    }
+  ]
+}
