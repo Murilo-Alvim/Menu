@@ -3,17 +3,17 @@
     "name": "Sabor & Arte",
     "tagline": "Cozinha autoral, ingredientes de verdade",
     "phone": "5511999999999",
-    "address": "Rua das Oliveiras, 245 — São Paulo / SP",
+    "address": "Rua Aspicuelta, 387 — Vila Madalena, São Paulo / SP",
     "hours": "Ter a Dom · 18h às 23h",
     "coverImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
     "deliveryFee": 8.0,
     "deliveryTime": "40-55 min"
   },
   "chef": {
-    "name": "Helena Marchetti",
-    "title": "Chef executiva",
-    "bio": "Formada pelo Le Cordon Bleu, Helena passou pela cozinha de restaurantes premiados em Lisboa e Buenos Aires antes de abrir a Sabor & Arte. Sua cozinha mistura técnica clássica com ingredientes de pequenos produtores brasileiros.",
-    "photo": "https://images.unsplash.com/photo-1581349485608-9469926a8e5e?auto=format&fit=crop&w=800&q=80"
+    "name": "Rafael Marchetti",
+    "title": "Chef executivo",
+    "bio": "Formado pelo Le Cordon Bleu, Rafael passou pela cozinha de restaurantes premiados em Lisboa e Buenos Aires antes de abrir a Sabor & Arte. Sua cozinha mistura técnica clássica com ingredientes de pequenos produtores brasileiros.",
+    "photo": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80"
   },
   "categories": [
     { "id": "entradas", "name": "Entradas", "icon": "🥗" },
