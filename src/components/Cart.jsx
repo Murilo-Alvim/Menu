@@ -203,7 +203,7 @@ function CartList({ items, totalItems, totals, restaurant, increment, decrement,
       </div>
 
       {items.length > 0 && (
-        <footer className="border-t border-stone-200 dark:border-stone-800 px-5 pt-4 pb-6 safe-bottom space-y-3 shrink-0">
+        <footer className="border-t border-stone-200 dark:border-stone-800 px-5 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] space-y-3 shrink-0">
           <div className="flex items-baseline justify-between">
             <span className="text-sm text-stone-500 dark:text-stone-400">Subtotal</span>
             <span className="text-xl font-extrabold tracking-tight">

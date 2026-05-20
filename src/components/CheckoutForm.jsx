@@ -156,7 +156,7 @@ export default function CheckoutForm({ totals, onBack, onSubmit }) {
         </Field>
       </div>
 
-      <footer className="border-t border-stone-200 dark:border-stone-800 px-5 pt-4 pb-6 safe-bottom shrink-0 space-y-3 bg-white dark:bg-stone-950">
+      <footer className="border-t border-stone-200 dark:border-stone-800 px-5 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] shrink-0 space-y-3 bg-white dark:bg-stone-950">
         <div className="space-y-1 text-sm">
           <Row label="Subtotal" value={formatPrice(totals.subtotal)} />
           {form.mode === 'delivery' && totals.deliveryFee > 0 && (

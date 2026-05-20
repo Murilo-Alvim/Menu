@@ -215,7 +215,7 @@ export default function ItemDetailModal({ item, open, onClose }) {
               </Group>
             </div>
 
-            <footer className="border-t border-stone-200 dark:border-stone-800 px-5 sm:px-7 pt-4 pb-6 safe-bottom flex items-center gap-4 bg-white dark:bg-stone-950">
+            <footer className="border-t border-stone-200 dark:border-stone-800 px-5 sm:px-7 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] flex items-center gap-4 bg-white dark:bg-stone-950">
               <div className="inline-flex items-center bg-stone-100 dark:bg-stone-900 rounded-full">
                 <button
                   type="button"
