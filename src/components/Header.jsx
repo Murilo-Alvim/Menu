@@ -1,6 +1,6 @@
 import { Moon, ShoppingBag, Sun } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { useTheme } from '../context/ThemeContext.jsx'
 import { useCart } from '../context/CartContext.jsx'
 import { useUI } from '../context/UIContext.jsx'
@@ -10,56 +10,32 @@ export default function Header({ restaurant, onOpenCart }) {
   const { totalItems } = useCart()
   const { registerCartTarget } = useUI()
   const cartBtnRef = useRef(null)
-  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     registerCartTarget(cartBtnRef.current)
   }, [registerCartTarget])
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
-    <header
-      className={[
-        'sticky top-0 z-40 transition-all duration-300',
-        scrolled
-          ? 'backdrop-blur-md bg-white/80 dark:bg-stone-950/80 border-b border-stone-200/60 dark:border-stone-800'
-          : 'bg-transparent border-b border-transparent'
-      ].join(' ')}
-    >
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-stone-950/85 border-b border-stone-200/60 dark:border-stone-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-        <motion.div
-          animate={{ opacity: scrolled ? 1 : 0, x: scrolled ? 0 : -10 }}
-          transition={{ duration: 0.25 }}
-          className="min-w-0"
-        >
+        <div className="min-w-0">
           <h1 className="text-lg sm:text-xl font-bold tracking-tight truncate">
             {restaurant.name}
           </h1>
           <p className="text-xs text-stone-500 dark:text-stone-400 truncate">
             {restaurant.hours}
           </p>
-        </motion.div>
+        </div>
 
-        <div className="flex items-center gap-2 ml-auto">
+        <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={toggleTheme}
             aria-label="Alternar tema"
-            className={[
-              'p-2 rounded-full transition-colors',
-              scrolled
-                ? 'hover:bg-stone-100 dark:hover:bg-stone-800'
-                : 'bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20'
-            ].join(' ')}
+            className="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
           >
-            {theme === 'dark' || !scrolled ? (
-              <Sun size={20} className={scrolled ? 'text-amber-400' : 'text-amber-300'} />
+            {theme === 'dark' ? (
+              <Sun size={20} className="text-amber-400" />
             ) : (
               <Moon size={20} className="text-stone-700" />
             )}
